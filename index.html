@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Minimalist PDF Pitch</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Prevents scrollbars on the body */
+        }
+        #pdf-viewer {
+            height: 100vh; /* Makes the viewer take the full viewport height */
+            width: 100vw;  /* Makes the viewer take the full viewport width */
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Add a container div for the PDF viewer -->
+    <div id="pdf-viewer"></div>
+
+    <!-- 2. Initialize EmbedPDF from their CDN -->
+    <script async type="module">
+        import EmbedPDF from 'https://cdn.jsdelivr.net/npm/@embedpdf/snippet@2/dist/embedpdf.js';
+
+        const viewer = EmbedPDF.init({
+            type: 'container',
+            target: document.getElementById('pdf-viewer'),
+            // Replace this URL with the direct raw link to your PDF file in your GitHub repository
+            src: 'https://raw.githubusercontent.com/CanaryEarth/pitch/master/canary.earth_PITCH.pdf' 
+        });
+    </script>
+</body>
+</html>
